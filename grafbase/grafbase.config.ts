@@ -19,21 +19,21 @@ const Project = g.model('Project', {
   liveSiteUrl: g.url(), 
   githubUrl: g.url(), 
   category: g.string().search(),
-  createdBy: g.relation(() => User),
+  createdBy: g.relation(() => User),/*
 }).auth((rules) => {
   rules.public().read()
-  rules.private().create().delete().update()
+  rules.private().create().delete().update()*/
 })
 
-const jwt = auth.JWT({
+/*const jwt = auth.JWT({
   issuer: 'grafbase',
   secret:  g.env('NEXTAUTH_SECRET')
-})
+})*/
 
 export default config({
   schema: g,
-  auth: {
+  /*auth: {
     providers: [jwt],
     rules: (rules) => rules.private()
-  },
+  },*/
 })
